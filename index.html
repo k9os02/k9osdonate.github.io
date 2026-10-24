@@ -98,6 +98,11 @@ button:hover{background:var(--cyan);color:var(--bg)}
 button.done{border-color:var(--pink);color:var(--pink)}
 button.done:hover{background:transparent;color:var(--pink)}
 
+/* QR */
+.qr{display:none;margin-top:.9rem;background:#fff;padding:.75rem;width:fit-content}
+.qr.open{display:block}
+.qr svg{display:block;width:9rem;height:9rem}
+
 /* Referral rows */
 .ref{
   display:flex;justify-content:space-between;align-items:center;gap:1rem;
@@ -149,6 +154,7 @@ footer p{margin:.4rem 0}
   </footer>
 </main>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <script>
 /* ============ CHỈ SỬA PHẦN NÀY ============ */
 const CONFIG = {
@@ -188,6 +194,19 @@ async function copyText(text){
   }
 }
 
+function makeQR(text){
+  const qr = qrcode(0, "M");
+  qr.addData(text);
+  qr.make();
+  const n = qr.getModuleCount();
+  let d = "";
+  for (let r = 0; r < n; r++)
+    for (let c = 0; c < n; c++)
+      if (qr.isDark(r, c)) d += "M" + c + "," + r + "h1v1h-1z";
+  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + n + " " + n +
+         '" shape-rendering="crispEdges"><path d="' + d + '" fill="#0c0a1f"/></svg>';
+}
+
 const walletBox = document.getElementById("wallets");
 CONFIG.wallets.forEach(w => {
   const card = el("div", "wallet");
@@ -206,6 +225,23 @@ CONFIG.wallets.forEach(w => {
   });
   row.append(addr, btn);
   card.append(head, row);
+
+  if (typeof qrcode !== "undefined") {
+    const qrBox = el("div", "qr");
+    qrBox.innerHTML = makeQR(w.address);
+    qrBox.setAttribute("role", "img");
+    qrBox.setAttribute("aria-label", "Mã QR địa chỉ " + w.coin);
+    const qrBtn = el("button", "", "Hiện QR");
+    qrBtn.type = "button";
+    qrBtn.setAttribute("aria-expanded", "false");
+    qrBtn.addEventListener("click", () => {
+      const open = qrBox.classList.toggle("open");
+      qrBtn.textContent = open ? "Ẩn QR" : "Hiện QR";
+      qrBtn.setAttribute("aria-expanded", String(open));
+    });
+    row.append(qrBtn);
+    card.append(qrBox);
+  }
   walletBox.append(card);
 });
 
