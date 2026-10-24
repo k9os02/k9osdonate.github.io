@@ -1,179 +1,228 @@
 <!DOCTYPE html>
-<html lang="vi" class="dark">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Hub | Ref & Donate</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter & JetBrains Mono -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>k9os – Ủng hộ & liên kết giới thiệu</title>
+<meta name="description" content="Địa chỉ ví nhận ủng hộ crypto và liên kết giới thiệu sàn CEX, DEX của k9os.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0a1f;
+  --panel:#13112b;
+  --line:#2a2650;
+  --text:#e8eaf8;
+  --muted:#9aa0c4;
+  --cyan:#3df5ff;
+  --pink:#ff3d9a;
+  --sans:"Chakra Petch",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{color-scheme:dark}
+body{
+  margin:0;min-height:100vh;
+  background:
+    radial-gradient(60rem 30rem at 85% -10%,rgba(61,245,255,.10),transparent 60%),
+    linear-gradient(var(--line) 1px,transparent 1px) 0 0/100% 56px,
+    linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/56px 100%,
+    var(--bg);
+  background-blend-mode:normal,soft-light,soft-light,normal;
+  color:var(--text);font:400 1rem/1.65 var(--sans);
+  padding:0 1.25rem;
+}
+main{max-width:44rem;margin:0 auto;padding:clamp(3rem,10vw,6.5rem) 0 3rem}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        cyber: {
-                            bg: '#080C14',
-                            card: 'rgba(15, 23, 42, 0.75)',
-                            border: 'rgba(51, 65, 85, 0.5)',
-                            neon: '#10B981',       /* Emerald */
-                            cyan: '#06B6D4',       /* Cyber Cyan */
-                            textMuted: '#94A3B8'
-                        }
-                    },
-                    boxShadow: {
-                        'neon-glow': '0 0 20px rgba(16, 185, 129, 0.15)',
-                        'cyan-glow': '0 0 20px rgba(6, 182, 212, 0.15)',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #080C14;
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(6, 182, 212, 0.08) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.08) 0px, transparent 50%);
-            background-attachment: fixed;
-        }
-        .glass-card {
-            background: rgba(15, 23, 42, 0.65);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-    </style>
+/* Hero */
+h1{
+  position:relative;display:inline-block;margin:0;
+  font:600 clamp(3.2rem,12vw,5.5rem)/1 var(--sans);letter-spacing:.02em;
+  text-shadow:0 0 28px rgba(61,245,255,.35);
+}
+h1::before,h1::after{
+  content:attr(data-text);position:absolute;inset:0;pointer-events:none;opacity:0;
+}
+h1::before{color:var(--cyan);clip-path:inset(0 0 55% 0)}
+h1::after{color:var(--pink);clip-path:inset(55% 0 0 0)}
+.lede{max-width:34rem;margin:1.25rem 0 0;color:var(--muted);font-size:1.075rem}
+
+@media (prefers-reduced-motion:no-preference){
+  h1::before{animation:glitch-a .9s steps(2,end) .2s 1}
+  h1::after{animation:glitch-b .9s steps(2,end) .2s 1}
+}
+@keyframes glitch-a{
+  0%,100%{opacity:0;transform:none}
+  20%{opacity:.9;transform:translate(-4px,0)}
+  40%{opacity:.9;transform:translate(3px,-1px)}
+  60%{opacity:.9;transform:translate(-2px,1px)}
+  80%{opacity:.6;transform:translate(2px,0)}
+}
+@keyframes glitch-b{
+  0%,100%{opacity:0;transform:none}
+  20%{opacity:.9;transform:translate(4px,0)}
+  40%{opacity:.9;transform:translate(-3px,1px)}
+  60%{opacity:.9;transform:translate(2px,-1px)}
+  80%{opacity:.6;transform:translate(-2px,0)}
+}
+
+/* Sections */
+section{margin-top:clamp(3rem,8vw,4.5rem)}
+h2{margin:0 0 .35rem;font:500 1.5rem/1.3 var(--sans)}
+h3{margin:2rem 0 .25rem;font:500 1.05rem/1.4 var(--sans);color:var(--cyan)}
+.note{margin:0 0 1.25rem;color:var(--muted);font-size:.95rem}
+.list{display:grid;gap:.75rem}
+
+/* Wallet */
+.wallet{
+  background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--cyan);
+  padding:1rem 1.1rem;
+}
+.wallet-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.coin{font-weight:600}
+.net{color:var(--muted);font-size:.9rem}
+.addr-row{display:flex;gap:.75rem;align-items:center;margin-top:.6rem}
+.addr{
+  flex:1;min-width:0;margin:0;font:400 .85rem/1.5 var(--mono);color:var(--text);
+  overflow-wrap:anywhere;word-break:break-all;
+}
+button{
+  font:500 .9rem var(--sans);color:var(--cyan);background:transparent;
+  border:1px solid var(--cyan);padding:.45rem .9rem;cursor:pointer;flex:none;
+  transition:background .15s,color .15s;
+}
+button:hover{background:var(--cyan);color:var(--bg)}
+button.done{border-color:var(--pink);color:var(--pink)}
+button.done:hover{background:transparent;color:var(--pink)}
+
+/* Referral rows */
+.ref{
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  padding:.9rem 1.1rem;background:var(--panel);border:1px solid var(--line);
+  text-decoration:none;transition:border-color .15s,transform .15s;
+}
+.ref:hover{border-color:var(--pink)}
+.ref-name{font-weight:600}
+.ref-perk{display:block;color:var(--muted);font-size:.9rem}
+.ref-go{color:var(--pink);font-size:.9rem;flex:none}
+
+footer{
+  margin-top:clamp(3rem,8vw,4.5rem);padding-top:1.25rem;border-top:1px solid var(--line);
+  color:var(--muted);font-size:.85rem;
+}
+footer p{margin:.4rem 0}
+
+@media (max-width:30rem){
+  .addr-row{flex-direction:column;align-items:stretch}
+  button{width:100%;padding:.6rem}
+}
+</style>
 </head>
-<body class="text-slate-100 min-h-screen flex flex-col items-center justify-between p-4 md:p-8 font-sans antialiased selection:bg-cyber-neon selection:text-black">
+<body>
+<main>
+  <header>
+    <h1 id="name" data-text="k9os">k9os</h1>
+    <p class="lede" id="tagline"></p>
+  </header>
 
-    <!-- Main Wrapper -->
-    <main class="max-w-md w-full my-auto space-y-8">
+  <section aria-labelledby="donate-title">
+    <h2 id="donate-title">Ủng hộ bằng crypto</h2>
+    <p class="note">Hãy chọn đúng mạng (network) trước khi gửi. Gửi sai mạng có thể làm mất tiền.</p>
+    <div class="list" id="wallets"></div>
+  </section>
 
-        <!-- PROFILE HEADER -->
-        <header class="text-center space-y-4">
-            <!-- Avatar with Cyber Border -->
-            <div class="relative w-24 h-24 mx-auto group">
-                <div class="absolute -inset-0.5 bg-gradient-to-r from-cyber-cyan to-cyber-neon rounded-full blur opacity-50 group-hover:opacity-100 transition duration-500"></div>
-                <div class="relative w-full h-full rounded-full bg-slate-950 p-1">
-                    <img src="https://api.dicebear.com/7.x/bottts/svg?seed=k9os02" alt="Avatar" class="w-full h-full rounded-full bg-slate-900 object-cover">
-                </div>
-            </div>
+  <section aria-labelledby="ref-title">
+    <h2 id="ref-title">Sàn giao dịch</h2>
+    <p class="note">Đăng ký qua liên kết dưới đây là một cách ủng hộ khác, không tốn thêm chi phí cho bạn.</p>
+    <h3>Sàn tập trung (CEX)</h3>
+    <div class="list" id="cex"></div>
+    <h3>Sàn phi tập trung (DEX)</h3>
+    <div class="list" id="dex"></div>
+  </section>
 
-            <!-- Title & Bio -->
-            <div class="space-y-1">
-                <h1 class="text-2xl font-bold tracking-tight text-white flex items-center justify-center gap-2">
-                    k9os02 <span class="w-2 h-2 rounded-full bg-cyber-neon animate-pulse"></span>
-                </h1>
-                <p class="text-xs text-cyber-textMuted tracking-wide uppercase font-mono">Crypto Trader • Game Dev • Linux</p>
-            </div>
+  <footer>
+    <p>Mình có thể nhận hoa hồng từ các liên kết giới thiệu. Bạn có thể được giảm phí hoặc nhận thưởng, tuỳ chương trình của từng sàn.</p>
+    <p>Nội dung ở đây không phải lời khuyên đầu tư. Hãy tự tìm hiểu trước khi giao dịch.</p>
+  </footer>
+</main>
 
-            <!-- Social Links -->
-            <div class="flex justify-center gap-3 pt-1">
-                <a href="#" target="_blank" class="w-9 h-9 rounded-lg glass-card border border-cyber-border flex items-center justify-center text-slate-400 hover:text-cyber-neon hover:border-cyber-neon/50 transition-all duration-300">
-                    <i class="fa-brands fa-telegram text-base"></i>
-                </a>
-                <a href="#" target="_blank" class="w-9 h-9 rounded-lg glass-card border border-cyber-border flex items-center justify-center text-slate-400 hover:text-cyber-cyan hover:border-cyber-cyan/50 transition-all duration-300">
-                    <i class="fa-brands fa-x-twitter text-base"></i>
-                </a>
-                <a href="#" target="_blank" class="w-9 h-9 rounded-lg glass-card border border-cyber-border flex items-center justify-center text-slate-400 hover:text-red-400 hover:border-red-400/50 transition-all duration-300">
-                    <i class="fa-brands fa-youtube text-base"></i>
-                </a>
-                <a href="#" target="_blank" class="w-9 h-9 rounded-lg glass-card border border-cyber-border flex items-center justify-center text-slate-400 hover:text-purple-400 hover:border-purple-400/50 transition-all duration-300">
-                    <i class="fa-brands fa-github text-base"></i>
-                </a>
-            </div>
-        </header>
+<script>
+/* ============ CHỈ SỬA PHẦN NÀY ============ */
+const CONFIG = {
+  tagline: "Mình làm game và học lập trình từ nền tảng. Nếu bạn thấy nội dung của mình hữu ích, bạn có thể ủng hộ ở dưới.",
+  wallets: [
+    { coin: "Bitcoin",  network: "Bitcoin",          address: "DIEN_DIA_CHI_BTC_CUA_BAN" },
+    { coin: "Ethereum", network: "Ethereum (ERC-20)", address: "DIEN_DIA_CHI_ETH_CUA_BAN" },
+    { coin: "USDT",     network: "TRON (TRC-20)",     address: "DIEN_DIA_CHI_USDT_CUA_BAN" }
+  ],
+  cex: [
+    { name: "Binance", perk: "Giảm phí giao dịch",  url: "https://example.com/ref-binance" },
+    { name: "OKX",     perk: "Giảm phí giao dịch",  url: "https://example.com/ref-okx" }
+  ],
+  dex: [
+    { name: "Hyperliquid", perk: "Giảm phí giao dịch", url: "https://example.com/ref-hyperliquid" },
+    { name: "Uniswap",     perk: "Hoán đổi token trên Ethereum", url: "https://example.com/ref-uniswap" }
+  ]
+};
+/* ========================================== */
 
-        <!-- SECTION 1: REFERRAL LINKS -->
-        <section class="space-y-3">
-            <div class="flex items-center justify-between px-1">
-                <h2 class="text-xs font-mono font-semibold text-cyber-textMuted uppercase tracking-widest flex items-center gap-2">
-                    <i class="fa-solid fa-bolt text-cyber-cyan text-xs"></i> Trading Referral
-                </h2>
-                <span class="text-[10px] font-mono text-slate-500">Fee Discount</span>
-            </div>
+document.getElementById("tagline").textContent = CONFIG.tagline;
 
-            <div class="space-y-2.5">
-                <!-- Binance -->
-                <a href="https://binance.com" target="_blank" class="group flex items-center justify-between p-3.5 glass-card border border-cyber-border hover:border-cyber-cyan/60 rounded-xl transition-all duration-300 hover:shadow-cyan-glow">
-                    <div class="flex items-center space-x-3.5">
-                        <div class="w-9 h-9 rounded-lg bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 flex items-center justify-center font-bold text-sm">
-                            <i class="fa-solid fa-coins"></i>
-                        </div>
-                        <div>
-                            <div class="text-sm font-semibold text-slate-100 group-hover:text-cyber-cyan transition-colors">Binance</div>
-                            <div class="text-[11px] text-cyber-textMuted">Giảm 20% phí giao dịch Futures</div>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-600 group-hover:text-cyber-cyan transition-colors"></i>
-                </a>
+function el(tag, cls, text){
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text) e.textContent = text;
+  return e;
+}
 
-                <!-- Bybit -->
-                <a href="https://bybit.com" target="_blank" class="group flex items-center justify-between p-3.5 glass-card border border-cyber-border hover:border-cyber-neon/60 rounded-xl transition-all duration-300 hover:shadow-neon-glow">
-                    <div class="flex items-center space-x-3.5">
-                        <div class="w-9 h-9 rounded-lg bg-orange-500/10 border border-orange-500/20 text-orange-400 flex items-center justify-center font-bold text-sm">
-                            BY
-                        </div>
-                        <div>
-                            <div class="text-sm font-semibold text-slate-100 group-hover:text-cyber-neon transition-colors">Bybit</div>
-                            <div class="text-[11px] text-cyber-textMuted">Thưởng Tân thủ & Giảm phí Taker</div>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-600 group-hover:text-cyber-neon transition-colors"></i>
-                </a>
+async function copyText(text){
+  try { await navigator.clipboard.writeText(text); return true; }
+  catch (_) {
+    const t = el("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    let ok = false; try { ok = document.execCommand("copy"); } catch (_) {}
+    t.remove(); return ok;
+  }
+}
 
-                <!-- Hyperliquid -->
-                <a href="https://hyperliquid.xyz" target="_blank" class="group flex items-center justify-between p-3.5 glass-card border border-cyber-border hover:border-cyber-cyan/60 rounded-xl transition-all duration-300 hover:shadow-cyan-glow">
-                    <div class="flex items-center space-x-3.5">
-                        <div class="w-9 h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyber-cyan flex items-center justify-center font-bold text-sm">
-                            HL
-                        </div>
-                        <div>
-                            <div class="text-sm font-semibold text-slate-100 group-hover:text-cyber-cyan transition-colors">Hyperliquid</div>
-                            <div class="text-[11px] text-cyber-textMuted">Perp DEX On-chain mượt nhất</div>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-600 group-hover:text-cyber-cyan transition-colors"></i>
-                </a>
-            </div>
-        </section>
+const walletBox = document.getElementById("wallets");
+CONFIG.wallets.forEach(w => {
+  const card = el("div", "wallet");
+  const head = el("div", "wallet-head");
+  head.append(el("span", "coin", w.coin), el("span", "net", w.network));
+  const row = el("div", "addr-row");
+  const addr = el("p", "addr", w.address);
+  const btn = el("button", "", "Sao chép");
+  btn.type = "button";
+  btn.setAttribute("aria-label", "Sao chép địa chỉ " + w.coin);
+  btn.addEventListener("click", async () => {
+    const ok = await copyText(w.address);
+    btn.textContent = ok ? "Đã sao chép" : "Chọn và sao chép thủ công";
+    btn.classList.add("done");
+    setTimeout(() => { btn.textContent = "Sao chép"; btn.classList.remove("done"); }, 1800);
+  });
+  row.append(addr, btn);
+  card.append(head, row);
+  walletBox.append(card);
+});
 
-        <!-- SECTION 2: DONATE ADDRESSES -->
-        <section class="space-y-3">
-            <div class="flex items-center justify-between px-1">
-                <h2 class="text-xs font-mono font-semibold text-cyber-textMuted uppercase tracking-widest flex items-center gap-2">
-                    <i class="fa-solid fa-wallet text-cyber-neon text-xs"></i> Donate Hub
-                </h2>
-                <span class="text-[10px] font-mono text-slate-500">1-Click Copy</span>
-            </div>
-
-            <div class="space-y-2.5">
-                <!-- EVM -->
-                <div class="p-3.5 glass-card border border-cyber-border rounded-xl space-y-2">
-                    <div class="flex justify-between items-center">
-                        <span class="text-xs font-semibold text-slate-200 flex items-center gap-2">
-                            <i class="fa-brands fa-ethereum text-indigo-400"></i> EVM (ETH / BSC / Arb / Base)
-                        </span>
-                        <button onclick="copyWallet('0xYOUR_EVM_ADDRESS_HERE', 'btn-evm')" id="btn-evm" class="text-[11px] font-mono bg-slate-800/80 hover:bg-cyber-neon hover:text-slate-950 text-slate-300 px-2.5 py-1 rounded-md border border-slate-700/50 transition-all duration-200">
-                            Copy
-                        </button>
-                    </div>
-                    <p class="text-[11px] font-mono text-cyber-textMuted bg-slate-950/60 p-2 rounded-lg border border-slate-800/80 truncate select-all">0xYOUR_EVM_ADDRESS_HERE</p>
-                </div>
-
-                <!-- SOL -->
-                <div class="p-3.5 glass-card border border-cyber-border rounded-xl space-y-2">
-                    <div class="flex justify-between items-center">
-                        <span class="text-xs font-semibold text-slate-200 flex items-center gap-2">
-                            <i class="fa-solid fa-bolt text-purple-400"></i> Solana (SOL / USDC)
-                        </span>
+function renderRefs(id, items){
+  const box = document.getElementById(id);
+  items.forEach(r => {
+    const a = el("a", "ref");
+    a.href = r.url; a.target = "_blank";
+    a.rel = "noopener noreferrer sponsored";
+    const left = el("span");
+    left.append(el("span", "ref-name", r.name), el("span", "ref-perk", r.perk));
+    a.append(left, el("span", "ref-go", "Mở liên kết"));
+    box.append(a);
+  });
+}
+renderRefs("cex", CONFIG.cex);
+renderRefs("dex", CONFIG.dex);
+</script>
+</body>
+</html>
