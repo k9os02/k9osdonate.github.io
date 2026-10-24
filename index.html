@@ -1,157 +1,179 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Links & Donate</title>
+    <title>Crypto Hub | Ref & Donate</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
                     colors: {
-                        darkbg: '#0F172A',
-                        cardbg: '#1E293B',
-                        accent: '#10B981',
-                        accenthover: '#059669'
+                        cyber: {
+                            bg: '#080C14',
+                            card: 'rgba(15, 23, 42, 0.75)',
+                            border: 'rgba(51, 65, 85, 0.5)',
+                            neon: '#10B981',       /* Emerald */
+                            cyan: '#06B6D4',       /* Cyber Cyan */
+                            textMuted: '#94A3B8'
+                        }
+                    },
+                    boxShadow: {
+                        'neon-glow': '0 0 20px rgba(16, 185, 129, 0.15)',
+                        'cyan-glow': '0 0 20px rgba(6, 182, 212, 0.15)',
                     }
                 }
             }
         }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #080C14;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(6, 182, 212, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.08) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
 </head>
-<body class="bg-darkbg text-slate-200 min-h-screen flex flex-col items-center p-4 font-sans">
+<body class="text-slate-100 min-h-screen flex flex-col items-center justify-between p-4 md:p-8 font-sans antialiased selection:bg-cyber-neon selection:text-black">
 
-    <!-- Container Chính -->
-    <div class="max-w-xl w-full my-8 space-y-6">
+    <!-- Main Wrapper -->
+    <main class="max-w-md w-full my-auto space-y-8">
 
-        <!-- Header -->
-        <div class="text-center space-y-3">
-            <div class="w-24 h-24 mx-auto rounded-full bg-slate-800 border-2 border-accent p-1 shadow-lg shadow-accent/20">
-                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=CryptoTrader" alt="Avatar" class="w-full h-full rounded-full bg-slate-900">
+        <!-- PROFILE HEADER -->
+        <header class="text-center space-y-4">
+            <!-- Avatar with Cyber Border -->
+            <div class="relative w-24 h-24 mx-auto group">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-cyber-cyan to-cyber-neon rounded-full blur opacity-50 group-hover:opacity-100 transition duration-500"></div>
+                <div class="relative w-full h-full rounded-full bg-slate-950 p-1">
+                    <img src="https://api.dicebear.com/7.x/bottts/svg?seed=k9os02" alt="Avatar" class="w-full h-full rounded-full bg-slate-900 object-cover">
+                </div>
             </div>
-            <h1 class="text-2xl font-bold text-white tracking-wide">Crypto Portal</h1>
-            <p class="text-sm text-slate-400">Trade, Research & Community Support</p>
-            
-            <!-- Social Icons -->
-            <div class="flex justify-center gap-4 text-xl text-slate-400 pt-1">
-                <a href="#" class="hover:text-accent transition-colors"><i class="fa-brands font-bold fa-telegram"></i></a>
-                <a href="#" class="hover:text-accent transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#" class="hover:text-accent transition-colors"><i class="fa-brands fa-youtube"></i></a>
+
+            <!-- Title & Bio -->
+            <div class="space-y-1">
+                <h1 class="text-2xl font-bold tracking-tight text-white flex items-center justify-center gap-2">
+                    k9os02 <span class="w-2 h-2 rounded-full bg-cyber-neon animate-pulse"></span>
+                </h1>
+                <p class="text-xs text-cyber-textMuted tracking-wide uppercase font-mono">Crypto Trader • Game Dev • Linux</p>
             </div>
-        </div>
 
-        <!-- SECTION 1: CEX & DEX Referral Links -->
-        <div class="space-y-3">
-            <h2 class="text-xs font-semibold text-slate-400 uppercase tracking-wider pl-1"><i class="fa-solid fa-link mr-2"></i>Đăng ký sàn (Giảm phí giao dịch)</h2>
-            
-            <!-- Link Card 1 -->
-            <a href="https://binance.com" target="_blank" class="flex items-center justify-between p-4 bg-cardbg hover:bg-slate-800 border border-slate-700/60 hover:border-accent/50 rounded-xl transition-all group">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-lg bg-yellow-500/10 text-yellow-500 flex items-center justify-center font-bold text-lg">B</div>
-                    <div>
-                        <div class="font-semibold text-white group-hover:text-accent transition-colors">Binance (CEX)</div>
-                        <div class="text-xs text-slate-400">Giảm 20% phí giao dịch Spot & Futures</div>
-                    </div>
-                </div>
-                <i class="fa-solid fa-chevron-right text-xs text-slate-500 group-hover:text-accent group-hover:translate-x-1 transition-all"></i>
-            </a>
+            <!-- Social Links -->
+            <div class="flex justify-center gap-3 pt-1">
+                <a href="#" target="_blank" class="w-9 h-9 rounded-lg glass-card border border-cyber-border flex items-center justify-center text-slate-400 hover:text-cyber-neon hover:border-cyber-neon/50 transition-all duration-300">
+                    <i class="fa-brands fa-telegram text-base"></i>
+                </a>
+                <a href="#" target="_blank" class="w-9 h-9 rounded-lg glass-card border border-cyber-border flex items-center justify-center text-slate-400 hover:text-cyber-cyan hover:border-cyber-cyan/50 transition-all duration-300">
+                    <i class="fa-brands fa-x-twitter text-base"></i>
+                </a>
+                <a href="#" target="_blank" class="w-9 h-9 rounded-lg glass-card border border-cyber-border flex items-center justify-center text-slate-400 hover:text-red-400 hover:border-red-400/50 transition-all duration-300">
+                    <i class="fa-brands fa-youtube text-base"></i>
+                </a>
+                <a href="#" target="_blank" class="w-9 h-9 rounded-lg glass-card border border-cyber-border flex items-center justify-center text-slate-400 hover:text-purple-400 hover:border-purple-400/50 transition-all duration-300">
+                    <i class="fa-brands fa-github text-base"></i>
+                </a>
+            </div>
+        </header>
 
-            <!-- Link Card 2 -->
-            <a href="https://bybit.com" target="_blank" class="flex items-center justify-between p-4 bg-cardbg hover:bg-slate-800 border border-slate-700/60 hover:border-accent/50 rounded-xl transition-all group">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-lg bg-orange-500/10 text-orange-400 flex items-center justify-center font-bold text-lg">BY</div>
-                    <div>
-                        <div class="font-semibold text-white group-hover:text-accent transition-colors">Bybit (CEX)</div>
-                        <div class="text-xs text-slate-400">Tặng Voucher Deposit & Giảm phí Taker</div>
-                    </div>
-                </div>
-                <i class="fa-solid fa-chevron-right text-xs text-slate-500 group-hover:text-accent group-hover:translate-x-1 transition-all"></i>
-            </a>
+        <!-- SECTION 1: REFERRAL LINKS -->
+        <section class="space-y-3">
+            <div class="flex items-center justify-between px-1">
+                <h2 class="text-xs font-mono font-semibold text-cyber-textMuted uppercase tracking-widest flex items-center gap-2">
+                    <i class="fa-solid fa-bolt text-cyber-cyan text-xs"></i> Trading Referral
+                </h2>
+                <span class="text-[10px] font-mono text-slate-500">Fee Discount</span>
+            </div>
 
-            <!-- Link Card 3 -->
-            <a href="https://hyperliquid.xyz" target="_blank" class="flex items-center justify-between p-4 bg-cardbg hover:bg-slate-800 border border-slate-700/60 hover:border-accent/50 rounded-xl transition-all group">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-lg">HL</div>
-                    <div>
-                        <div class="font-semibold text-white group-hover:text-accent transition-colors">Hyperliquid (DEX On-chain)</div>
-                        <div class="text-xs text-slate-400">Sàn Perp DEX mượt nhất + Tích lũy Points</div>
+            <div class="space-y-2.5">
+                <!-- Binance -->
+                <a href="https://binance.com" target="_blank" class="group flex items-center justify-between p-3.5 glass-card border border-cyber-border hover:border-cyber-cyan/60 rounded-xl transition-all duration-300 hover:shadow-cyan-glow">
+                    <div class="flex items-center space-x-3.5">
+                        <div class="w-9 h-9 rounded-lg bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 flex items-center justify-center font-bold text-sm">
+                            <i class="fa-solid fa-coins"></i>
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-slate-100 group-hover:text-cyber-cyan transition-colors">Binance</div>
+                            <div class="text-[11px] text-cyber-textMuted">Giảm 20% phí giao dịch Futures</div>
+                        </div>
                     </div>
-                </div>
-                <i class="fa-solid fa-chevron-right text-xs text-slate-500 group-hover:text-accent group-hover:translate-x-1 transition-all"></i>
-            </a>
-        </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-600 group-hover:text-cyber-cyan transition-colors"></i>
+                </a>
+
+                <!-- Bybit -->
+                <a href="https://bybit.com" target="_blank" class="group flex items-center justify-between p-3.5 glass-card border border-cyber-border hover:border-cyber-neon/60 rounded-xl transition-all duration-300 hover:shadow-neon-glow">
+                    <div class="flex items-center space-x-3.5">
+                        <div class="w-9 h-9 rounded-lg bg-orange-500/10 border border-orange-500/20 text-orange-400 flex items-center justify-center font-bold text-sm">
+                            BY
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-slate-100 group-hover:text-cyber-neon transition-colors">Bybit</div>
+                            <div class="text-[11px] text-cyber-textMuted">Thưởng Tân thủ & Giảm phí Taker</div>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-600 group-hover:text-cyber-neon transition-colors"></i>
+                </a>
+
+                <!-- Hyperliquid -->
+                <a href="https://hyperliquid.xyz" target="_blank" class="group flex items-center justify-between p-3.5 glass-card border border-cyber-border hover:border-cyber-cyan/60 rounded-xl transition-all duration-300 hover:shadow-cyan-glow">
+                    <div class="flex items-center space-x-3.5">
+                        <div class="w-9 h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyber-cyan flex items-center justify-center font-bold text-sm">
+                            HL
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-slate-100 group-hover:text-cyber-cyan transition-colors">Hyperliquid</div>
+                            <div class="text-[11px] text-cyber-textMuted">Perp DEX On-chain mượt nhất</div>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-600 group-hover:text-cyber-cyan transition-colors"></i>
+                </a>
+            </div>
+        </section>
 
         <!-- SECTION 2: DONATE ADDRESSES -->
-        <div class="space-y-3 pt-4">
-            <h2 class="text-xs font-semibold text-slate-400 uppercase tracking-wider pl-1"><i class="fa-solid fa-wallet mr-2"></i>Ủng hộ & Donate</h2>
-
-            <!-- Wallet 1: EVM -->
-            <div class="p-4 bg-cardbg border border-slate-700/60 rounded-xl space-y-2">
-                <div class="flex justify-between items-center">
-                    <span class="text-sm font-semibold text-white flex items-center gap-2">
-                        <i class="fa-brands fa-ethereum text-indigo-400"></i> EVM (ETH / BSC / Arbitrum / Base)
-                    </span>
-                    <button onclick="copyWallet('0xYourEVMWalletAddressHere', 'btn-evm')" id="btn-evm" class="text-xs bg-slate-700 hover:bg-accent text-slate-200 hover:text-white px-3 py-1 rounded-md transition-colors">
-                        <i class="fa-regular fa-copy mr-1"></i>Copy
-                    </button>
-                </div>
-                <p class="text-xs font-mono text-slate-400 bg-slate-900/60 p-2 rounded truncate select-all">0xYourEVMWalletAddressHere</p>
+        <section class="space-y-3">
+            <div class="flex items-center justify-between px-1">
+                <h2 class="text-xs font-mono font-semibold text-cyber-textMuted uppercase tracking-widest flex items-center gap-2">
+                    <i class="fa-solid fa-wallet text-cyber-neon text-xs"></i> Donate Hub
+                </h2>
+                <span class="text-[10px] font-mono text-slate-500">1-Click Copy</span>
             </div>
 
-            <!-- Wallet 2: SOL -->
-            <div class="p-4 bg-cardbg border border-slate-700/60 rounded-xl space-y-2">
-                <div class="flex justify-between items-center">
-                    <span class="text-sm font-semibold text-white flex items-center gap-2">
-                        <i class="fa-solid fa-bolt text-purple-400"></i> Solana (SOL / USDC)
-                    </span>
-                    <button onclick="copyWallet('YourSolanaWalletAddressHere', 'btn-sol')" id="btn-sol" class="text-xs bg-slate-700 hover:bg-accent text-slate-200 hover:text-white px-3 py-1 rounded-md transition-colors">
-                        <i class="fa-regular fa-copy mr-1"></i>Copy
-                    </button>
+            <div class="space-y-2.5">
+                <!-- EVM -->
+                <div class="p-3.5 glass-card border border-cyber-border rounded-xl space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-semibold text-slate-200 flex items-center gap-2">
+                            <i class="fa-brands fa-ethereum text-indigo-400"></i> EVM (ETH / BSC / Arb / Base)
+                        </span>
+                        <button onclick="copyWallet('0xYOUR_EVM_ADDRESS_HERE', 'btn-evm')" id="btn-evm" class="text-[11px] font-mono bg-slate-800/80 hover:bg-cyber-neon hover:text-slate-950 text-slate-300 px-2.5 py-1 rounded-md border border-slate-700/50 transition-all duration-200">
+                            Copy
+                        </button>
+                    </div>
+                    <p class="text-[11px] font-mono text-cyber-textMuted bg-slate-950/60 p-2 rounded-lg border border-slate-800/80 truncate select-all">0xYOUR_EVM_ADDRESS_HERE</p>
                 </div>
-                <p class="text-xs font-mono text-slate-400 bg-slate-900/60 p-2 rounded truncate select-all">YourSolanaWalletAddressHere</p>
-            </div>
 
-            <!-- Wallet 3: BTC -->
-            <div class="p-4 bg-cardbg border border-slate-700/60 rounded-xl space-y-2">
-                <div class="flex justify-between items-center">
-                    <span class="text-sm font-semibold text-white flex items-center gap-2">
-                        <i class="fa-brands fa-bitcoin text-amber-400"></i> Bitcoin (BTC)
-                    </span>
-                    <button onclick="copyWallet('YourBitcoinWalletAddressHere', 'btn-btc')" id="btn-btc" class="text-xs bg-slate-700 hover:bg-accent text-slate-200 hover:text-white px-3 py-1 rounded-md transition-colors">
-                        <i class="fa-regular fa-copy mr-1"></i>Copy
-                    </button>
-                </div>
-                <p class="text-xs font-mono text-slate-400 bg-slate-900/60 p-2 rounded truncate select-all">YourBitcoinWalletAddressHere</p>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="text-center text-xs text-slate-500 pt-6">
-            © 2026 Your Name • Powered by GitHub Pages
-        </div>
-
-    </div>
-
-    <!-- Script Copy logic -->
-    <script>
-        function copyWallet(address, btnId) {
-            navigator.clipboard.writeText(address);
-            const btn = document.getElementById(btnId);
-            const originalText = btn.innerHTML;
-            
-            btn.innerHTML = '<i class="fa-solid fa-check mr-1"></i>Copied!';
-            btn.classList.remove('bg-slate-700');
-            btn.classList.add('bg-accent', 'text-white');
-            
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.classList.remove('bg-accent', 'text-white');
-                btn.classList.add('bg-slate-700');
-            }, 2000);
-        }
-    </script>
-</body>
-</html>
+                <!-- SOL -->
+                <div class="p-3.5 glass-card border border-cyber-border rounded-xl space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-semibold text-slate-200 flex items-center gap-2">
+                            <i class="fa-solid fa-bolt text-purple-400"></i> Solana (SOL / USDC)
+                        </span>
