@@ -114,6 +114,16 @@ button.done:hover{background:transparent;color:var(--pink)}
 .ref-perk{display:block;color:var(--muted);font-size:.9rem}
 .ref-go{color:var(--pink);font-size:.9rem;flex:none}
 
+/* Social links */
+.socials{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1rem}
+.socials a{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:.58rem .82rem;border:1px solid var(--line);
+  background:rgba(255,255,255,.02);text-decoration:none;color:var(--text);
+  transition:border-color .15s,transform .15s;
+}
+.socials a:hover{border-color:var(--cyan);transform:translateY(-1px)}
+
 footer{
   margin-top:clamp(3rem,8vw,4.5rem);padding-top:1.25rem;border-top:1px solid var(--line);
   color:var(--muted);font-size:.85rem;
@@ -123,6 +133,7 @@ footer p{margin:.4rem 0}
 @media (max-width:30rem){
   .addr-row{flex-direction:column;align-items:stretch}
   button{width:100%;padding:.6rem}
+  .socials a{width:100%}
 }
 </style>
 </head>
@@ -146,6 +157,16 @@ footer p{margin:.4rem 0}
     <div class="list" id="cex"></div>
     <h3>Sàn phi tập trung (DEX)</h3>
     <div class="list" id="dex"></div>
+  </section>
+
+  <section aria-labelledby="social-title">
+    <h2 id="social-title">Kết nối với mình</h2>
+    <div class="socials">
+      <a href="https://discord.com/users/k9os02" target="_blank" rel="noopener noreferrer">Discord: k9os02</a>
+      <a href="https://x.com/k9os_02" target="_blank" rel="noopener noreferrer">X: @k9os_02</a>
+      <a href="https://t.me/djxxdd9" target="_blank" rel="noopener noreferrer">Telegram: @djxxdd9</a>
+      <a href="https://www.youtube.com/@k9os.2" target="_blank" rel="noopener noreferrer">YouTube: @k9os.2</a>
+    </div>
   </section>
 
   <footer>
