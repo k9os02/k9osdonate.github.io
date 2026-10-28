@@ -146,7 +146,7 @@ footer p{margin:.4rem 0}
 
   <section aria-labelledby="donate-title">
     <h2 id="donate-title">Ủng hộ bằng crypto</h2>
-    <p class="note">Lưu ý: địa chỉ ví EVM có thể dùng trên nhiều mạng khác nhau như Base, BNB Smart Chain và Ethereum. Hãy chắc chắn bạn gửi đúng chain trước khi chuyển; gửi sai mạng có thể làm mất tiền.</p>
+    <p class="note">Lưu ý: đây là cùng một địa chỉ ví EVM. ETH và USDC gửi trên Base, còn USDT gửi trên BNB Smart Chain (BEP-20). Gửi sai mạng có thể làm mất tiền.</p>
     <div class="list" id="wallets"></div>
   </section>
 
@@ -180,7 +180,8 @@ footer p{margin:.4rem 0}
 const CONFIG = {
   tagline: "Mình đẩu tư crypto bằng phương pháp Price Action Bò Gấu, và chơi game :D. Nếu bạn thấy nội dung của mình hữu ích, bạn có thể ủng hộ theo các cách ở dưới.",
   wallets: [
-    { coin: "EVM Wallet", network: "Ethereum / USDC / USDT trên EVM", address: "0x27e6a358581373a1fa7f751b0fcb86858bc43535" }
+    { coin: "ETH / USDC", network: "Base", address: "0x27e6a358581373a1fa7f751b0fcb86858bc43535" },
+    { coin: "USDT", network: "BNB Smart Chain (BEP-20)", address: "0x27e6a358581373a1fa7f751b0fcb86858bc43535" }
   ],
   cex: [
     { name: "Binance", perk: "Giảm phí giao dịch", url: "https://www.binance.com/register?ref=Y10WJVS5" },
