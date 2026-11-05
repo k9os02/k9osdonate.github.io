@@ -17,3 +17,6 @@ document.querySelectorAll("button[data-copy]").forEach((btn) => {
     }, 1800);
   });
 });
+
+// Bỏ section Công cụ khỏi trang.
+document.querySelector('section[aria-labelledby="tool-title"]')?.remove();
